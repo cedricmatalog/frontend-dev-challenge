@@ -19,7 +19,9 @@ export default function PokemonDetail({ pokemon }) {
     Flying: 'gray',
     Water: 'blue',
     Rock: 'gray',
-    Ground: 'yellow'
+    Ground: 'yellow',
+    Electric: 'yellow',
+    Bug: 'green',
   };
 
   return (
@@ -53,23 +55,28 @@ export default function PokemonDetail({ pokemon }) {
             <br />
             <p className="text-black font-semibold text-2xl mb-0.5">Height</p>
             <br />
-            <span className="mr-2">
-              {height.minimum} - {height.maximum}
-            </span>
+            {height && (
+              <span className="mr-2">
+                {height.minimum} - {height.maximum}
+              </span>
+            )}
+
             <br />
             <br />
             <p className="text-black font-semibold text-2xl mb-0.5">Weight</p>
             <br />
-            <span className="mr-2">
-              {weight.minimum} - {weight.maximum}
-            </span>
+            {height && (
+              <span className="mr-2">
+                {weight.minimum} - {weight.maximum}
+              </span>
+            )}
           </div>
           <div className="w-2/4 border-l-2 border-F2C94C -ml-1 pl-3">
             <p className="text-black font-semibold text-2xl mb-0.5">Type</p>
             <br />
             {types &&
               types.map((type) => (
-                <span className={`bg-${COLORS[type]}-100 p-2 mr-2`}>
+                <span key={type} className={`bg-${COLORS[type]}-100 p-2 mr-2`}>
                   {type}
                 </span>
               ))}
@@ -82,7 +89,10 @@ export default function PokemonDetail({ pokemon }) {
             <br />
             {weaknesses &&
               weaknesses.map((weakness) => (
-                <span className={`bg-${COLORS[weakness]}-100 p-2 mr-2`}>
+                <span
+                  key={weakness}
+                  className={`bg-${COLORS[weakness]}-100 p-2 mr-2`}
+                >
                   {weakness}
                 </span>
               ))}

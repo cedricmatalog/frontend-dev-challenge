@@ -51,7 +51,7 @@ export default function Pokemon() {
     error,
     data: pokemonList,
   } = useQuery(GET_POKEMONS, {
-    variables: { first: 5 },
+    variables: { first: 15 },
   });
 
   const [pokemon, setPokemon] = useState();
@@ -72,9 +72,11 @@ export default function Pokemon() {
     }
   }, [pokemonId]);
 
+  if (!pokemonList) return null;
+
   return (
     <div className="min-h-screen flex items-stretch justify-center bg-484D57 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="flex w-4/5 min-h-737 bg-white">
+      <div className="flex w-8/12 min-h-737 bg-white">
         <PokemonList
           pokemonList={pokemonList}
           setPokemonId={setPokemonId}

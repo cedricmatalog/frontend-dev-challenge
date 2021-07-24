@@ -14,7 +14,6 @@ module.exports = {
         '1F1F1F': '#1F1F1F',
         '484D57': '#484D57',
         'EDEDED': '#EDEDED',
-   
       },
     },
   },
