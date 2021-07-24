@@ -74,7 +74,7 @@ export default function Pokemon() {
 
   if (loading)
     return (
-      <div className="min-h-screen flex items-stretch justify-center bg-484D57 py-12 px-4 sm:px-6 lg:px-8"></div>
+      <div className="min-h-screen flex items-stretch justify-center bg-484D57 py-12 px-4 sm:px-6 lg:px-8 sm:text-sm"></div>
     );
 
   if (error) {

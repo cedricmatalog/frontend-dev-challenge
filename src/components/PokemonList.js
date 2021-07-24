@@ -84,7 +84,7 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
           .map(({ id, image, name, number }) => (
             <div
               key={id}
-              className={`flex items-center ml-12 mr-10 mt-2 mb-4 p-5 bg-3F414B border-r-4 ${
+              className={`cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 flex items-center ml-12 mr-10 mt-2 mb-4 p-5 bg-3F414B border-r-4 ${
                 pokemonId === id ? 'border-F2C94C' : 'border-3F414B'
               } hover:border-F2C94C`}
               onClick={() => setPokemonId(id)}
