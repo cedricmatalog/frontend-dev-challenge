@@ -46,8 +46,8 @@ export default function Login({ setView }) {
   const { email = '', password = '' } = formValues;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-BLACK py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-LIGHT_BLACK px-10 py-16">
+    <div className="min-h-screen flex items-center justify-center bg-1C1D1F py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-2D2F36 px-10 py-16">
         {status === REJECTED && (
           <p class="text-red-500 text-center">Incorrect email or password.</p>
         )}
@@ -68,11 +68,11 @@ export default function Login({ setView }) {
                 name="email"
                 type="text"
                 onChange={handleChange}
-                className={`appearance-none bg-GRAY text-white rounded-none relative block w-full px-3 py-2 border ${
+                className={`appearance-none bg-3F414B text-white rounded-none relative block w-full px-3 py-2 border ${
                   status === REJECTED && email === ''
                     ? 'border-red-500'
-                    : 'border-GRAY'
-                } placeholder-gray-500 rounded-md focus:outline-none focus:ring-YELLOW focus:border-YELLOW focus:z-10 sm:text-sm`}
+                    : 'border-3F414B'
+                } placeholder-gray-500 rounded-md focus:outline-none focus:ring-F2C94C focus:border-F2C94C focus:z-10 sm:text-sm`}
                 placeholder="Email address"
               />
             </div>
@@ -85,11 +85,11 @@ export default function Login({ setView }) {
                 name="password"
                 type="password"
                 onChange={handleChange}
-                className={`appearance-none bg-GRAY text-PASSWORD rounded-none relative block w-full px-3 py-2 border ${
+                className={`appearance-none bg-3F414B text-8B8B8B rounded-none relative block w-full px-3 py-2 border ${
                   status === REJECTED && password === ''
                     ? 'border-red-500'
-                    : 'border-GRAY'
-                } placeholder-gray-500  rounded-md focus:outline-none focus:ring-indigo-500 focus:border-YELLOW focus:z-10 sm:text-sm`}
+                    : 'border-3F414B'
+                } placeholder-gray-500  rounded-md focus:outline-none focus:ring-indigo-500 focus:border-F2C94C focus:z-10 sm:text-sm`}
                 placeholder="Password"
               />
             </div>
@@ -98,7 +98,7 @@ export default function Login({ setView }) {
           <div className="pt-3">
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-YELLOW hover:bg-YELLOW"
+              className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-F2C94C hover:bg-F2C94C"
             >
               {status === LOADING ? (
                 <svg

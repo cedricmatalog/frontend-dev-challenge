@@ -4,11 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        BLACK: '#1C1D1F',
-        GRAY: '#3F414B',
-        LIGHT_BLACK: '#2D2F36',
-        YELLOW: '#F2C94C',
-        PASSWORD: '#8B8B8B',
+        '1C1D1F': '#1C1D1F',
+        '2D2F36': '#2D2F36',
+        '3F414B': '#3F414B',
+        'E5E5E5': '#E5E5E5',
+        'F2C94C': '#F2C94C',
+        '8B8B8B': '#8B8B8B',
+        '3B3E46': '#3B3E46',
+        '1F1F1F': '#1F1F1F',
+        '484D57': '#484D57',
+        'EDEDED': '#EDEDED',
+   
       },
     },
   },

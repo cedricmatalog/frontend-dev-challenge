@@ -3,7 +3,7 @@ import Login from './Login';
 import Pokemon from './Pokemon';
 
 function App() {
-  const [view, setView] = useState('login');
+  const [view, setView] = useState('pokemon');
 
   return (
     <>
