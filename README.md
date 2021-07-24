@@ -1,3 +1,12 @@
+# This app is deployed at netlify
+
+[nervous-babbage-53d060](https://nervous-babbage-53d060.netlify.app/).
+
+
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
