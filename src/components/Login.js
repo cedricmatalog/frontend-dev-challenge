@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react';
+import { STATUS } from '../constants';
 
-const STATUS = {
-  IDLE: 'IDLE',
-  LOADING: 'LOADING',
-  RESOLVED: 'RESOLVED',
-  REJECTED: 'REJECTED',
-};
+const { IDLE, LOADING, RESOLVED, REJECTED } = STATUS;
 
 export default function Login({ setView }) {
-  const { IDLE, LOADING, RESOLVED, REJECTED } = STATUS;
-
   const [status, setStatus] = useState(IDLE);
   const [formValues, setFormValues] = useState({});
 
@@ -17,7 +11,7 @@ export default function Login({ setView }) {
     return () => {
       setStatus(IDLE);
     };
-  }, [IDLE]);
+  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;

@@ -1,49 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useEffect, useState } from 'react';
+import { GET_POKEMONS } from '../gql/queries';
 import PokemonDetail from './PokemonDetail';
 import PokemonList from './PokemonList';
-
-const GET_POKEMONS = gql`
-  query pokemons($first: Int!) {
-    pokemons(first: $first) {
-      id
-      number
-      name
-      image
-      classification
-      types
-      weaknesses
-      weight {
-        minimum
-        maximum
-      }
-      height {
-        minimum
-        maximum
-      }
-    }
-  }
-`;
-
-// const GET_POKEMON = gql`
-//   query pokemons($id: String, $name: String) {
-//     pokemon(id: $id, name: $name) {
-//       id
-//       number
-//       name
-//       image
-//       classification
-//       weight {
-//         minimum
-//         maximum
-//       }
-//       height {
-//         minimum
-//         maximum
-//       }
-//     }
-//   }
-// `;
 
 export default function Pokemon() {
   const {
@@ -72,10 +31,7 @@ export default function Pokemon() {
     }
   }, [pokemonId, pokemonList]);
 
-  if (loading)
-    return (
-      <div className="min-h-screen flex items-stretch justify-center bg-484D57 py-12 px-4 sm:px-6 lg:px-8 sm:text-sm"></div>
-    );
+  if (loading) return <div className="min-h-screen flex bg-484D57"></div>;
 
   if (error) {
     return <p>ERROR: {error.message}</p>;

@@ -97,11 +97,6 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
                 }}
               ></div>
 
-              {/* <img
-                className="rounded-full h-16 w-16 mr-5"
-                src={image}
-                alt={name}
-              /> */}
               <span className="text-F2C94C font-bold text-lg mr-3">
                 {number}
               </span>
