@@ -41,34 +41,35 @@ export default function PokemonDetail({ pokemon }) {
           }}
         >
           <div className="w-2/4">
-            <p className="text-black font-semibold text-2xl mb-0.5">
+            <p className="text-black font-semibold text-2xl mb-6">
               Classification
             </p>
-            <br />
+
             <span className="mr-2">{classification}</span>
-            <br />
-            <br />
-            <p className="text-black font-semibold text-2xl mb-0.5">Height</p>
-            <br />
+
+            <p className="text-black font-semibold text-2xl mt-6 mb-6">
+              Height
+            </p>
+
             {height && (
               <span className="mr-2">
                 {height.minimum} - {height.maximum}
               </span>
             )}
 
-            <br />
-            <br />
-            <p className="text-black font-semibold text-2xl mb-0.5">Weight</p>
-            <br />
-            {height && (
+            <p className="text-black font-semibold text-2xl mt-6 mb-6">
+              Weight
+            </p>
+
+            {weight && (
               <span className="mr-2">
                 {weight.minimum} - {weight.maximum}
               </span>
             )}
           </div>
           <div className="w-2/4 border-l-2 border-F2C94C -ml-1 pl-3">
-            <p className="text-black font-semibold text-2xl mb-0.5">Type</p>
-            <br />
+            <p className="text-black font-semibold text-2xl mb-6">Type</p>
+
             {types &&
               types.map((type) => (
                 <span key={type} className={`bg-${COLORS[type]}-100 p-2 mr-2`}>
@@ -76,12 +77,9 @@ export default function PokemonDetail({ pokemon }) {
                 </span>
               ))}
 
-            <br />
-            <br />
-            <p className="text-black font-semibold text-2xl mb-0.5">
+            <p className="text-black font-semibold text-2xl mt-6 mb-6">
               Weaknesses
             </p>
-            <br />
             {weaknesses &&
               weaknesses.map((weakness) => (
                 <span
