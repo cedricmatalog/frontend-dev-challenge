@@ -1,12 +1,23 @@
 import { useEffect, useState } from 'react';
 
 export default function Login({ setView }) {
-  const [status, setStatus] = useState('idle');
+  const STATUS = {
+    IDLE: 'IDLE',
+    LOADING: 'LOADING',
+    RESOLVED: 'RESOLVED',
+    REJECTED: 'REJECTED',
+  };
+
+  const { IDLE, LOADING, RESOLVED, REJECTED } = STATUS;
+
+  const [status, setStatus] = useState(IDLE);
   const [formValues, setFormValues] = useState({});
 
   useEffect(() => {
-    console.log(status);
-  }, [status]);
+    return () => {
+      setStatus(IDLE);
+    };
+  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -14,28 +25,30 @@ export default function Login({ setView }) {
   }
 
   function handleSubmit(event) {
-    setStatus('loading');
+    setStatus(LOADING);
 
     const { email, password } = formValues;
 
     if (email === 'admin' && password === 'admin') {
       setTimeout(() => {
-        setStatus('resolved');
+        setStatus(RESOLVED);
         setView('pokemon');
       }, 500);
     } else {
       setTimeout(() => {
-        setStatus('rejected');
+        setStatus(REJECTED);
       }, 500);
     }
 
     event.preventDefault();
   }
 
+  const { email = '', password = '' } = formValues;
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-BLACK py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-LIGHT_BLACK px-10 py-16">
-        {status === 'rejected' && (
+        {status === REJECTED && (
           <p class="text-red-500 text-center">Incorrect email or password.</p>
         )}
 
@@ -56,7 +69,7 @@ export default function Login({ setView }) {
                 type="text"
                 onChange={handleChange}
                 className={`appearance-none bg-GRAY text-white rounded-none relative block w-full px-3 py-2 border ${
-                  status === 'rejected' && formValues.email === ''
+                  status === REJECTED && email === ''
                     ? 'border-red-500'
                     : 'border-GRAY'
                 } placeholder-gray-500 rounded-md focus:outline-none focus:ring-YELLOW focus:border-YELLOW focus:z-10 sm:text-sm`}
@@ -73,7 +86,7 @@ export default function Login({ setView }) {
                 type="password"
                 onChange={handleChange}
                 className={`appearance-none bg-GRAY text-PASSWORD rounded-none relative block w-full px-3 py-2 border ${
-                  status === 'rejected' && formValues.password === ''
+                  status === REJECTED && password === ''
                     ? 'border-red-500'
                     : 'border-GRAY'
                 } placeholder-gray-500  rounded-md focus:outline-none focus:ring-indigo-500 focus:border-YELLOW focus:z-10 sm:text-sm`}
@@ -87,7 +100,7 @@ export default function Login({ setView }) {
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-YELLOW hover:bg-YELLOW"
             >
-              {status === 'loading' ? (
+              {status === LOADING ? (
                 <svg
                   className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                   xmlns="http://www.w3.org/2000/svg"
