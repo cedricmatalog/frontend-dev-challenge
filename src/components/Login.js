@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-export default function Login({ setView }) {
-  const STATUS = {
-    IDLE: 'IDLE',
-    LOADING: 'LOADING',
-    RESOLVED: 'RESOLVED',
-    REJECTED: 'REJECTED',
-  };
+const STATUS = {
+  IDLE: 'IDLE',
+  LOADING: 'LOADING',
+  RESOLVED: 'RESOLVED',
+  REJECTED: 'REJECTED',
+};
 
+export default function Login({ setView }) {
   const { IDLE, LOADING, RESOLVED, REJECTED } = STATUS;
 
   const [status, setStatus] = useState(IDLE);
@@ -17,7 +17,7 @@ export default function Login({ setView }) {
     return () => {
       setStatus(IDLE);
     };
-  }, []);
+  }, [IDLE]);
 
   function handleChange(e) {
     const { name, value } = e.target;

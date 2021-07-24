@@ -1,3 +1,17 @@
+const COLORS = {
+  Grass: 'green',
+  Poison: 'purple',
+  Fire: 'red',
+  Ice: 'indigo',
+  Psychic: 'yellow',
+  Flying: 'gray',
+  Water: 'blue',
+  Rock: 'gray',
+  Ground: 'yellow',
+  Electric: 'yellow',
+  Bug: 'green',
+};
+
 export default function PokemonDetail({ pokemon }) {
   const {
     image,
@@ -9,20 +23,6 @@ export default function PokemonDetail({ pokemon }) {
     height,
     classification,
   } = pokemon ?? {};
-
-  const COLORS = {
-    Grass: 'green',
-    Poison: 'purple',
-    Fire: 'red',
-    Ice: 'indigo',
-    Psychic: 'yellow',
-    Flying: 'gray',
-    Water: 'blue',
-    Rock: 'gray',
-    Ground: 'yellow',
-    Electric: 'yellow',
-    Bug: 'green',
-  };
 
   return (
     <div className="w-9/12 bg-3B3E46">
