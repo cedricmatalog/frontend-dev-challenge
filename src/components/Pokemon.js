@@ -25,25 +25,25 @@ const GET_POKEMONS = gql`
   }
 `;
 
-const GET_POKEMON = gql`
-  query pokemons($id: String, $name: String) {
-    pokemon(id: $id, name: $name) {
-      id
-      number
-      name
-      image
-      classification
-      weight {
-        minimum
-        maximum
-      }
-      height {
-        minimum
-        maximum
-      }
-    }
-  }
-`;
+// const GET_POKEMON = gql`
+//   query pokemons($id: String, $name: String) {
+//     pokemon(id: $id, name: $name) {
+//       id
+//       number
+//       name
+//       image
+//       classification
+//       weight {
+//         minimum
+//         maximum
+//       }
+//       height {
+//         minimum
+//         maximum
+//       }
+//     }
+//   }
+// `;
 
 export default function Pokemon() {
   const {
@@ -70,9 +70,16 @@ export default function Pokemon() {
       const { pokemons } = pokemonList;
       setPokemon(pokemons.find(({ id }) => pokemonId === id));
     }
-  }, [pokemonId]);
+  }, [pokemonId, pokemonList]);
 
-  if (!pokemonList) return null;
+  if (loading)
+    return (
+      <div className="min-h-screen flex items-stretch justify-center bg-484D57 py-12 px-4 sm:px-6 lg:px-8"></div>
+    );
+
+  if (error) {
+    return <p>ERROR: {error.message}</p>;
+  }
 
   return (
     <div className="min-h-screen flex items-stretch justify-center bg-484D57 py-12 px-4 sm:px-6 lg:px-8">
