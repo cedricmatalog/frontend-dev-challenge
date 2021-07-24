@@ -46,7 +46,7 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
             <button
               className="bg-2D2F36 p-1 px-3 m-1 rounded text-white"
               style={{
-                cursor: currentPage === 0 ? 'not-allowed' : 'default',
+                cursor: currentPage === 0 ? 'not-allowed' : 'pointer',
               }}
               onClick={() => {
                 if (currentPage !== 0) {
@@ -60,7 +60,7 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
               className="bg-2D2F36 p-1 px-3 m-1 rounded text-white"
               style={{
                 cursor:
-                  currentPage === pagesCount - 1 ? 'not-allowed' : 'default',
+                  currentPage === pagesCount - 1 ? 'not-allowed' : 'pointer',
               }}
               onClick={() => {
                 if (currentPage !== pagesCount - 1) {
