@@ -10,7 +10,7 @@ export default function Pokemon() {
     error,
     data: pokemonList,
   } = useQuery(GET_POKEMONS, {
-    variables: { first: 15 },
+    variables: { first: 20 },
   });
 
   const [pokemon, setPokemon] = useState();

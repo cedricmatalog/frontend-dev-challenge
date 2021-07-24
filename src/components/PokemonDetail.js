@@ -35,7 +35,7 @@ export default function PokemonDetail({ pokemon }) {
         </div>
 
         <div
-          className="flex h-full bg-white m-10 -mt-14 mb-16 rounded-lg px-10 py-16"
+          className="flex h-full bg-white m-10 -mt-14 mb-16 rounded-lg px-10 py-16 pt-20"
           style={{
             boxShadow: '0px 10px 20px 0px rgba(0,0,0,0.75)',
           }}
