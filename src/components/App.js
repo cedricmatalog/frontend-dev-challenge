@@ -1,5 +1,16 @@
+import { useState } from 'react';
+import Login from './Login';
+import Pokemon from './Pokemon';
+
 function App() {
-  return <h1> App</h1>;
+  const [view, setView] = useState('login');
+
+  return (
+    <>
+      {view === 'login' && <Login setView={setView} />}
+      {view === 'pokemon' && <Pokemon />}
+    </>
+  );
 }
 
 export default App;
