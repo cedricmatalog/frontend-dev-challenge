@@ -1,68 +1,70 @@
-[[hiring]] [[luxor]]
+# Getting Started with Create React App
 
-# Frontend Challenge
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a frontend project that simulates a potential real-life designer hand-off that is given to a software engineer to implement. You have 24 hours to complete this challenge.
+## Available Scripts
 
-Your task is to implement the two Figma designs to spec, and integrate it with a real, public GraphQL api.
+In the project directory, you can run:
 
-You are free to use any web-framework and technology, as long as the core frontend stack is based on React.
+### `yarn start`
 
-We recommend highlighting these skills if you have familiarity with it, however this is optional and not necessary. Usage of these libraries will not impact the scoring of our code-review:
-- Next.js or CRA
-- Typescript
-- CSS-in-JS (styled-components, emotion, etc.)
-- Tailwind CSS
-- XState
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Task Description
-You are building two very simple flows. The first is a login page. 
-This login page will simply check static credentials (e.g. admin/admin) which if work, should redirect the user to the main page. 
-DO NOT build a full auth system for this. We do not expect you to build a backend.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-When reviewing the login page, we are looking for an understanding of:
-- Ability to create forms
-- Ability to implement the various form states (field validation, error, success etc)
-- Ability to implement style to spec
-- Responsiveness
+### `yarn test`
 
-After the login page, you will be dropped into a "Pokedex", a simply dashboard that renders a list of Pokemon. When a Pokemon is selected, the selected Pokemon shows up on the right side with more details.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-You will notice that in the selected section, only the header is designed for you. You have free autonomy over how to design the details section, and you are encouraged to implement the details page yourself.
+### `yarn build`
 
-You will be judged for an understanding of:
-- Ability to use Graphql correctly
-- Ability to integrate a real API
-- Ability to implement a pagination API
-- Clean-code and seperation of component concerns
-- Ability to design new UIs
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Figma Link
-https://www.figma.com/file/lv57Aog6JVWqWJH4STVKeL/frontend-challenge?node-id=0%3A1
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Graphql API
-https://graphql-pokemon2.vercel.app/
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Example query:
-```graphql
-{
-  pokemons(first: 10) {
-    id
-    number
-    name
-    image
-    classification
-    weight {
-      minimum
-      maximum
-    }
-    height {
-      minimum
-      maximum
-    }
-  }
-}
-```
+### `yarn eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
