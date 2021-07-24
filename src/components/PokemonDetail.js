@@ -36,13 +36,14 @@ export default function PokemonDetail({ pokemon }) {
 
       <div className="flex flex-col w-full h-5/6">
         <div className="flex justify-center z-10 mt-8">
-        <div
-                className="rounded-full h-44 w-44 mr-5 bg-white bg-contain bg-no-repeat bg-center"
-                style={{
-                  backgroundImage: `url(${image})`,
-                  backgroundSize: '100px'
-                }}
-              ></div>
+          <div
+            className="rounded-full h-44 w-44 bg-white bg-contain bg-no-repeat bg-center"
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: '100px',
+              boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.75)',
+            }}
+          ></div>
         </div>
 
         <div

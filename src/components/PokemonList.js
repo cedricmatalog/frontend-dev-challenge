@@ -93,7 +93,7 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
                 className="rounded-full h-16 w-16 mr-5 bg-white bg-contain bg-no-repeat bg-center"
                 style={{
                   backgroundImage: `url(${image})`,
-                  backgroundSize: '45px'
+                  backgroundSize: '45px',
                 }}
               ></div>
 
