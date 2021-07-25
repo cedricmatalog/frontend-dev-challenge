@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Pagination from './Pagination';
 
 export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
   const [totalPokemonCount, setTotalPokemonCount] = useState(0);
@@ -20,61 +21,6 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
   }, [currentPage]);
 
   if (pokemonList === undefined) return null;
-
-  function renderPagination() {
-    return (
-      <div className="flex-grow">
-        <div className="h-3/6"></div>
-        <div className="flex justify-between h-3/6 bg-1F1F1F">
-          <div className="flex items-center just pl-4">
-            {[...Array(pagesCount)].map((e, i) => (
-              <button
-                className={`bg-2D2F36 p-1 px-3 m-1 rounded text-white border-b-2 ${
-                  i === currentPage ? 'border-F2C94C' : 'border-3F414B'
-                }`}
-                key={i}
-                onClick={() => {
-                  setCurrentPage(i);
-                }}
-              >
-                {i + 1}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center just pr-4">
-            <button
-              className="bg-2D2F36 p-1 px-3 m-1 rounded text-white"
-              style={{
-                cursor: currentPage === 0 ? 'not-allowed' : 'pointer',
-              }}
-              onClick={() => {
-                if (currentPage !== 0) {
-                  setCurrentPage(currentPage - 1);
-                }
-              }}
-            >
-              Prev
-            </button>
-            <button
-              className="bg-2D2F36 p-1 px-3 m-1 rounded text-white"
-              style={{
-                cursor:
-                  currentPage === pagesCount - 1 ? 'not-allowed' : 'pointer',
-              }}
-              onClick={() => {
-                if (currentPage !== pagesCount - 1) {
-                  setCurrentPage(currentPage + 1);
-                }
-              }}
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="flex flex-col w-5/12 bg-2D2F36">
@@ -104,7 +50,11 @@ export default function PokemonList({ pokemonList, setPokemonId, pokemonId }) {
             </div>
           ))}
       </div>
-      {renderPagination()}
+      <Pagination
+        pagesCount={pagesCount}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }
