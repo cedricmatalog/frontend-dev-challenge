@@ -17,4 +17,6 @@ export const COLORS = {
   Ground: 'yellow',
   Electric: 'yellow',
   Bug: 'green',
+  Normal: 'gray',
+  Fighting: 'red',
 };
