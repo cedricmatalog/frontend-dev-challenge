@@ -1,3 +1,7 @@
+https://nervous-babbage-53d060.netlify.app/
+Email address: admin
+Password: admin
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
